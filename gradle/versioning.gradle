@@ -1,0 +1,26 @@
+ext.buildNumber = System.properties.SOURCE_BUILD_NUMBER
+
+version = new TestVersion(0, 1, buildNumber)
+
+class TestVersion {
+    Integer major
+    Integer minor
+    String build
+
+    TestVersion(Integer major, Integer minor, String build) {
+        this.major = major
+        this.minor = minor
+        this.build = build
+    }
+
+    @Override
+    String toString() {
+        String fullVersion = "$major.$minor"
+        if (build) {
+            fullVersion += ".$build"
+        } else {
+            fullVersion += "-SNAPSHOT"
+        }
+        fullVersion
+    }
+}

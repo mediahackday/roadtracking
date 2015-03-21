@@ -1,3 +1,31 @@
+subprojects {
+    apply plugin: 'java'
+
+    buildscript {
+        ext {
+            appEngineVersion = '1.9.18'
+            objectifyVersion = '5.1.5'
+            guiceVersion = '4.0-beta5'
+        }
+
+        repositories {
+            mavenCentral()
+        }
+
+        dependencies {
+            classpath "com.google.appengine:gradle-appengine-plugin:$appEngineVersion"
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile "com.google.inject:guice:$guiceVersion"
+    }
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }

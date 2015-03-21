@@ -1,0 +1,15 @@
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+dependencies {
+    appengineSdk "com.google.appengine:appengine-java-sdk:$appEngineVersion"
+}
+
+appengine {
+    httpPort = 8888
+    downloadSdk = true
+
+    appcfg {
+        oauth2 = true
+    }
+}

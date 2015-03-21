@@ -3,6 +3,24 @@ apply plugin: 'appengine'
 
 dependencies {
     appengineSdk "com.google.appengine:appengine-java-sdk:$appEngineVersion"
+
+    compile project(':rt-rest')
+    compile project(':rt-util-guice-provider')
+
+    compile "com.google.appengine:appengine-api-1.0-sdk:$appEngineVersion"
+    compile "com.googlecode.objectify:objectify:$objectifyVersion"
+    compile "com.google.inject.extensions:guice-servlet:$guiceVersion"
+    compile "com.google.guava:guava:$guavaVersion"
+
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+
+
+    compile "org.glassfish.jersey.containers:jersey-container-servlet-core:$jerseyVersion"
+    compile "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
+    compile "org.glassfish.jersey.incubator:jersey-gae-integration:$jerseyVersion"
+    compile 'org.glassfish.hk2:guice-bridge:2.4.0-b07'
+
+    compile "org.slf4j:slf4j-jdk14:$slf4jVersion"
 }
 
 appengine {

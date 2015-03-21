@@ -9,5 +9,12 @@ inbound_services:
 system_properties:
   java.util.logging.config.file: WEB-INF/logging.properties
 
+handlers:
+  - url: /*
+    filter: com.google.inject.servlet.GuiceFilter
+
+listeners:
+   - com.roadtracking.web.guice.GuiceServletConfig
+
 welcome_files:
   - index.html

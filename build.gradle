@@ -1,11 +1,19 @@
 subprojects {
     apply plugin: 'java'
 
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+
     buildscript {
         ext {
             appEngineVersion = '1.9.18'
             objectifyVersion = '5.1.5'
             guiceVersion = '4.0-beta5'
+            guavaVersion = '18.0'
+            jaxRsApiVersion = '2.0.1'
+            slf4jVersion = '1.7.10'
+            jodaVersion = '2.6'
+            jerseyVersion = '2.17'
         }
 
         repositories {
@@ -23,6 +31,8 @@ subprojects {
 
     dependencies {
         compile "com.google.inject:guice:$guiceVersion"
+        compile "org.slf4j:slf4j-api:$slf4jVersion"
+        compile "joda-time:joda-time:$jodaVersion"
     }
 }
 

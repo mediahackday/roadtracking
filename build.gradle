@@ -1,3 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'appengine'
+
+buildscript {
+    ext {
+        appEngineVersion = "1.9.18"
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.google.appengine:gradle-appengine-plugin:$appEngineVersion"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    appengineSdk "com.google.appengine:appengine-java-sdk:$appEngineVersion"
+}
+
+appengine {
+    httpPort = 8888
+    downloadSdk = true
+
+    appcfg {
+        oauth2 = true
+    }
+}
+
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }

@@ -38,6 +38,10 @@ public class DriverPoint implements IDriverPoint {
     public DriverDto get(HttpServletRequest request) {
         String customerName = format("%s:GOOGLE", request.getAttribute("EMAIL").toString());
         Driver driver = dao.getEntity(Driver.class, customerName);
-        return mapper.map(driver);
+        if (driver == null) {
+            return null;
+        } else {
+            return mapper.map(driver);
+        }
     }
 }

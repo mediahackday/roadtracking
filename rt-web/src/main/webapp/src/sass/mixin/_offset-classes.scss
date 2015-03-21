@@ -1,0 +1,30 @@
+/**
+* Generate offset helper classes for the different viewports of Bootstrap.
+* Set $visibility-class, e.g. sm or md, and $offsetvalue, e.g. 3, 6, on mixin include in your sass file.
+*
+* Offsets: 0 6 9 12 15 18 24
+* Examples: padding-top-sm-9; margin-sm-0;
+*/
+
+@mixin optional-offset-classes($visibilty-class, $offsetvalue) {
+	@each $offset-type in padding, margin {
+		@each $offset-direction in '', -top, -right, -bottom, -left {
+			@each $offset-value in $offsetvalue {
+				$visibility-dash: null;
+				$unit: null;
+
+				@if $visibilty-class != '' {
+					$visibility-dash: '-';
+				}
+
+				@if $offset-value > 0 {
+					$unit:px;
+				}
+
+				.#{$offset-type}#{$offset-direction}-#{$visibilty-class}#{$visibility-dash}#{$offset-value} {
+					#{$offset-type}#{$offset-direction}: #{$offset-value}$unit;
+				}
+			}
+		}
+	}
+}

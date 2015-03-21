@@ -235,7 +235,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', [
-		'clean:build', 'copy:all', 'includes'
+		'clean:build', 'sass:dev', 'cssmin:all', 'copy:all', 'includes'
     ]);
 
     grunt.registerTask('test', [

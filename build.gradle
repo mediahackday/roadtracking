@@ -1,10 +1,20 @@
-apply plugin: 'java'
-apply plugin: 'war'
-apply plugin: 'appengine'
+subprojects {
+    apply plugin: 'java'
 
-buildscript {
-    ext {
-        appEngineVersion = "1.9.18"
+    buildscript {
+        ext {
+            appEngineVersion = '1.9.18'
+            objectifyVersion = '5.1.5'
+            guiceVersion = '4.0-beta5'
+        }
+
+        repositories {
+            mavenCentral()
+        }
+
+        dependencies {
+            classpath "com.google.appengine:gradle-appengine-plugin:$appEngineVersion"
+        }
     }
 
     repositories {
@@ -12,24 +22,7 @@ buildscript {
     }
 
     dependencies {
-        classpath "com.google.appengine:gradle-appengine-plugin:$appEngineVersion"
-    }
-}
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    appengineSdk "com.google.appengine:appengine-java-sdk:$appEngineVersion"
-}
-
-appengine {
-    httpPort = 8888
-    downloadSdk = true
-
-    appcfg {
-        oauth2 = true
+        compile "com.google.inject:guice:$guiceVersion"
     }
 }
 

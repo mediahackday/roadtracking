@@ -58,14 +58,14 @@ public class SecurityManager implements ISecurityManager {
 
     private List<String> allowedUsers =
             Arrays.asList(
-                    "schmidt@sohomint.com");
+                    "");
 
     /**
      * Cache authentication token -> user mail.
      */
     private LoadingCache<String, String> auths = CacheBuilder.newBuilder()
             .maximumSize(1000)
-            .expireAfterWrite(80, TimeUnit.MINUTES)
+            .expireAfterWrite(60, TimeUnit.MINUTES)
             .build(new CacheLoader<String, String>() {
                 @Override
                 public String load(String key) throws Exception {
@@ -110,10 +110,12 @@ public class SecurityManager implements ISecurityManager {
     @Override
     public String getUserEmail(String authHeader) {
         String userMail = null;
-        try {
-            userMail = auths.getUnchecked(authHeader);
-        } catch (CacheLoader.InvalidCacheLoadException e) {
-            logger.error("Auth header {} could not be authorized", authHeader);
+        if (authHeader != null) {
+            try {
+                userMail = auths.getUnchecked(authHeader);
+            } catch (CacheLoader.InvalidCacheLoadException e) {
+                logger.error("Auth header {} could not be authorized", authHeader);
+            }
         }
         return userMail;
     }

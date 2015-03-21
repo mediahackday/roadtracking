@@ -5,6 +5,7 @@ dependencies {
     appengineSdk "com.google.appengine:appengine-java-sdk:$appEngineVersion"
 
     compile project(':rt-rest')
+    compile project(':rt-mapper')
     compile project(':rt-util-guice-provider')
 
     compile "com.google.appengine:appengine-api-1.0-sdk:$appEngineVersion"

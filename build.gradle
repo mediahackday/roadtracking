@@ -7,6 +7,7 @@ subprojects {
     buildscript {
         ext {
             appEngineVersion = '1.9.18'
+            googleApiVersion = '1.19.0'
             objectifyVersion = '5.1.5'
             guiceVersion = '4.0-beta5'
             guavaVersion = '18.0'
@@ -18,10 +19,12 @@ subprojects {
 
         repositories {
             mavenCentral()
+            jcenter()
         }
 
         dependencies {
             classpath "com.google.appengine:gradle-appengine-plugin:$appEngineVersion"
+            classpath 'com.moowork.gradle:gradle-grunt-plugin:0.9'
         }
     }
 

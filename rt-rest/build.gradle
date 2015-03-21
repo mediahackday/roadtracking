@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':rt-api')
+    compile project(':rt-persistence')
+//    compile project(':alib-ae:ae-mapper')
+//    compile project(':alib-ext-api:ext-youtube')
+}

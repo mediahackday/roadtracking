@@ -19,8 +19,6 @@ public class DriverMapper implements IDriverMapper {
 
     @Override
     public DriverDto map(Driver driver) {
-        DriverDto dto = mapDriver.map(driver, DriverDto.class);
-        dto.setName(dto.getName().split(":")[0]);
-        return dto;
+        return mapDriver.map(driver, DriverDto.class);
     }
 }

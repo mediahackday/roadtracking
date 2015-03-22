@@ -20,10 +20,7 @@ public class AuthFilter implements Filter {
 
 	private final UserService userService = UserServiceFactory.getUserService();
 
-    List<String> whiteList = Arrays.asList("schmidt@sohomint.com",
-            "nolte@sohomint.com", "steininger@sohomint.com", "nommensen@sohomint.com", "ngoran@sohomint.com",
-            "schmitt@sohomint.com", "arrow@sohomint.com", "hinderink@sohomint.com",
-            "matin@sohomint.com", "tcherevik@sohomint.com", "developer@sohomint.com");
+    List<String> whiteList = Arrays.asList( );
 
     @Inject
     private org.slf4j.Logger logger;
@@ -90,7 +87,8 @@ public class AuthFilter implements Filter {
 				"/_ah/mail/",
                 "/_ah/admin/",
 				"/auth",
-				"/test"
+				"/test",
+                "/remote_api"
 		};
 		for (String pattern : authFree) {
 			if (url.startsWith(pattern)) {

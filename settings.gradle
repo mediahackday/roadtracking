@@ -1,1 +1,1 @@
-include 'rt-persistence', 'rt-web', 'rt-api', 'rt-rest', 'rt-util-guice-provider', 'rt-ui', 'rt-mapper'
+include 'rt-persistence', 'rt-web', 'rt-api', 'rt-rest', 'rt-util-guice-provider', 'rt-ui', 'rt-mapper', 'rt-remote-client', 'rt-util-credential'

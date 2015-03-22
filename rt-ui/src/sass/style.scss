@@ -66,6 +66,10 @@
 	@include optional-offset-classes("lg", 0 3 6 9 12 15 18 21 24);
 }
 
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
 .bg-brand-dark,
 caption {
 	background-color: #333;

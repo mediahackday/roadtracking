@@ -3,10 +3,7 @@ package com.roadtracking.persistence.dao.impl;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 import com.roadtracking.persistence.dao.api.IDao;
-import com.roadtracking.persistence.entity.AuthSecret;
-import com.roadtracking.persistence.entity.Businessman;
-import com.roadtracking.persistence.entity.Customer;
-import com.roadtracking.persistence.entity.Driver;
+import com.roadtracking.persistence.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +17,7 @@ public class Dao implements IDao {
         register(Driver.class);
         register(Businessman.class);
         register(AuthSecret.class);
+        register(GeoPoint.class);
     }
 
     public <ENTITY> List<ENTITY> getAll(Class<ENTITY> kindClass) {
@@ -54,6 +52,11 @@ public class Dao implements IDao {
 
     public <ENTITY> Ref<ENTITY> createRef(Class<ENTITY> kindClass, final long id) {
         return Ref.create(Key.create(kindClass, id));
+    }
+
+    @Override
+    public <ENTITY> Ref<ENTITY> createRef(Class<ENTITY> kindClass, String name) {
+        return Ref.create(Key.create(kindClass, name));
     }
 
     public <ENTITY> void deleteEntitiesViaIds(final Class<ENTITY> kindClass, final List<Long> ids) {

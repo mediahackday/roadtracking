@@ -38,5 +38,7 @@ public interface IDao {
 
 	<ENTITY> Ref<ENTITY> createRef(Class<ENTITY> kindClass, final long id);
 
+    <ENTITY> Ref<ENTITY> createRef(Class<ENTITY> kindClass, final String name);
+
 	<ENTITY> void deleteEntitiesViaIds(Class<ENTITY> kindClass, List<Long> ids);
 }

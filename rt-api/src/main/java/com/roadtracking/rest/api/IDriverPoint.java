@@ -7,7 +7,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 
-@Path("/user")
+@Path("/driver")
 public interface IDriverPoint {
 
 	@PUT

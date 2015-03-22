@@ -1,6 +1,6 @@
 package com.roadtracking.web.guice.jersey;
 
-import com.roadtracking.rest.impl.UserPoint;
+import com.roadtracking.rest.impl.DriverPoint;
 import com.roadtracking.web.guice.GuiceServletConfig;
 import org.glassfish.hk2.api.ServiceLocator;
 import org.glassfish.jersey.jackson.JacksonFeature;
@@ -22,6 +22,6 @@ public class JerseyApplication extends ResourceConfig {
         GuiceIntoHK2Bridge guiceBridge = serviceLocator.getService(GuiceIntoHK2Bridge.class);
         guiceBridge.bridgeGuiceInjector(GuiceServletConfig.injector);
 
-        register(UserPoint.class);
+        register(DriverPoint.class);
 	}
 }

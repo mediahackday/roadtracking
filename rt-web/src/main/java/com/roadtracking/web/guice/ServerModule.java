@@ -4,6 +4,10 @@ import com.google.apphosting.utils.remoteapi.RemoteApiServlet;
 import com.google.inject.AbstractModule;
 import com.google.inject.matcher.Matchers;
 import com.googlecode.objectify.ObjectifyFilter;
+import com.roadtracking.mapper.api.IDriverMapper;
+import com.roadtracking.mapper.impl.DriverMapper;
+import com.roadtracking.persistence.dao.api.IDao;
+import com.roadtracking.persistence.dao.impl.Dao;
 import com.roadtracking.util.guice.provider.logger.DefaultLoggerProvider;
 import com.roadtracking.util.guice.provider.logger.Slf4JTypeListener;
 import com.roadtracking.web.security.oauth.manager.*;
@@ -24,6 +28,9 @@ public class ServerModule extends AbstractModule {
 		bind(Logger.class).toProvider(DefaultLoggerProvider.class);
 
         bind(ISecurityManager.class).to(SecurityManager.class);
+        bind(IDriverMapper.class).to(DriverMapper.class);
+
+        bind(IDao.class).to(Dao.class);
 
         bind(RemoteApiServlet.class).in(Singleton.class);
 		bind(ObjectifyFilter.class).in(Singleton.class);

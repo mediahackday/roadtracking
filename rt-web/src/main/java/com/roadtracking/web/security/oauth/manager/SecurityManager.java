@@ -14,6 +14,8 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
+import com.roadtracking.persistence.dao.api.IDao;
+import com.roadtracking.persistence.entity.AuthSecret;
 import com.roadtracking.web.security.oauth.model.OauthToken;
 import com.roadtracking.web.security.oauth.model.Profile;
 import org.glassfish.jersey.jackson.JacksonFeature;
@@ -49,8 +51,8 @@ public class SecurityManager implements ISecurityManager {
 
     private static String REDIRECT_URL = "http://roadtracking-pro.appspot.com/auth";
 
-    private static String CLIENT_ID     = "821276603152-scfllveg1j7ckd81jcbd3o45ajurfotq.apps.googleusercontent.com";
-    private static String CLIENT_SECRET = "gJi9oWWwPwbzsqB4UqBsp91S";
+    private String CLIENT_ID     = "";
+    private String CLIENT_SECRET = "";
 
     private static final HttpTransport HTTP_TRANSPORT = new NetHttpTransport();
 
@@ -59,6 +61,13 @@ public class SecurityManager implements ISecurityManager {
     private List<String> allowedUsers =
             Arrays.asList(
                     "");
+
+    @Inject
+    public SecurityManager(IDao dao) {
+        AuthSecret authSecret = dao.getEntity(AuthSecret.class, "GOOGLE");
+        CLIENT_ID = authSecret.getClientId();
+        CLIENT_SECRET = authSecret.getClientSecret();
+    }
 
     /**
      * Cache authentication token -> user mail.
@@ -86,6 +95,7 @@ public class SecurityManager implements ISecurityManager {
     public OauthToken getOauthToken(String oauthCode) {
         OauthToken oauthToken = null;
         logger.info("Sending of oauth access token request ...");
+        logger.info(CLIENT_ID);
         try {
             AuthorizationCodeFlow codeFlow = new AuthorizationCodeFlow.Builder(
                     BearerToken.authorizationHeaderAccessMethod(),

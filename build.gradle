@@ -8,7 +8,7 @@ subprojects {
         ext {
             appEngineVersion = '1.9.18'
             googleApiVersion = '1.19.0'
-            objectifyVersion = '5.1.5'
+            objectifyVersion = '5.0.5'
             guiceVersion = '4.0-beta5'
             guavaVersion = '18.0'
             jaxRsApiVersion = '2.0.1'

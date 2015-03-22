@@ -1,0 +1,8 @@
+dependencies {
+    compile project(':rt-persistence')
+    compile project(':rt-util-guice-provider')
+    compile project(':rt-util-credential')
+
+    compile "com.google.appengine:appengine-remote-api:$appEngineVersion"
+    compile "org.slf4j:slf4j-log4j12:$slf4jVersion"
+}

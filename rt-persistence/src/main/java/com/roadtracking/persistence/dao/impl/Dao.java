@@ -3,6 +3,7 @@ package com.roadtracking.persistence.dao.impl;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.Ref;
 import com.roadtracking.persistence.dao.api.IDao;
+import com.roadtracking.persistence.entity.AuthSecret;
 import com.roadtracking.persistence.entity.Businessman;
 import com.roadtracking.persistence.entity.Customer;
 import com.roadtracking.persistence.entity.Driver;
@@ -18,6 +19,7 @@ public class Dao implements IDao {
         register(Customer.class);
         register(Driver.class);
         register(Businessman.class);
+        register(AuthSecret.class);
     }
 
     public <ENTITY> List<ENTITY> getAll(Class<ENTITY> kindClass) {

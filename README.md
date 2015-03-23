@@ -57,11 +57,8 @@ NPM Clean Cache:
 $ npm cache clean
 ```
 
-## Code Example
-tbd.
-
 ## Motivation
-This project were build with a team of six young innovators from all over Europe. We just met at the [Media Hack Day](http://www.mediahackday.com) in Berlin and formed the team. We scratched and developed the PointUp Webapp in between 24h. For Further Information just checkout our site on [hackerleague](https://www.hackerleague.org/hackathons/media-hack-day-connected-car/hacks/roadtracking).
+This project was build with a team of six young innovators from all over Europe. We just met at the [Media Hack Day](http://www.mediahackday.com) in Berlin and formed the team. We scratched and developed the PointUp Webapp in between 24h. For Further Information just checkout our site on [Hackerleague](https://www.hackerleague.org/hackathons/media-hack-day-connected-car/hacks/roadtracking).
 
 ## API Reference
 tbd.
@@ -70,10 +67,13 @@ tbd.
 tbd.
 
 ## Contributors
-Aileen, Barbara, Wilko, Alex, Alex and Aurelius
+[Aileen](https://www.xing.com/profile/Aileen_Tschoepe), [Barbara](https://twitter.com/Barbara_Tsingas), [Wilko](https://www.xing.com/profile/Wilko_Malchau), [Alex](http://de.linkedin.com/in/alittorin), Alex and [Aurelius](https://twitter.com/webtobesocial)
 
 ## Live Example
 Browse the live [PointUp](http://roadtracking-pro.appspot.com) WebApp.
+
+## Credits
+Thanks for the great support by the [Bosch mySPIN](http://www.bosch-softtec.com/myspin.html) Team.
 
 ## License
 Code released under the [MIT](https://github.com/mediahackday/roadtracking/blob/master/LICENSE) license.

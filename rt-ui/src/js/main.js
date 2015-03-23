@@ -2,6 +2,18 @@
 	// The $ is now locally scoped
 	
 	rt = {
+		setLocalStorageItem: function(key, value) {
+			localStorage.setItem(key, value);
+		},
+
+		getLocalStorageItem: function(key) {
+			localStorage.getItem(key);
+		},
+
+		removeLocalStorageItem: function(key) {
+        	localStorage.removeItem(key);
+		},
+
 		getName: function(personid) {
 			return $.ajax({
 				url: './auth',

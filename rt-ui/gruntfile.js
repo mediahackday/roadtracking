@@ -11,26 +11,6 @@ module.exports = function (grunt) {
 			bootstrap: ['node_modules/bootstrap-sass/assets']
 		},
 
-        browserSync: {
-			default_options: {
-				bsFiles: {
-					src: [
-						'css/*.css',
-						'js/*.js',
-						'*.html'
-					]
-				},
-
-				options: {
-					watchTask: true,
-
-					server: {
-						baseDir: './<%= project.dist %>/'
-					}
-				}
-			}
-        },
-
 		sass: {
 			dev: {
 				files: [{
@@ -61,6 +41,24 @@ module.exports = function (grunt) {
 					src: ['*.css', '!*.min.css'],
 					dest: './<%= project.base %>/css',
 					ext: '.min.css'
+				}]
+			}
+		},
+
+		uglify: {
+			options: {
+				mangle: {
+					except: ['jQuery']
+				}
+			},
+
+			all: {
+				files: [{
+					expand: true,
+					cwd: '<%= project.base %>/js',
+					src: ['*.js', '!*.min.js'],
+					dest: '<%= project.base %>/js',
+					ext: '.min.js'
 				}]
 			}
 		},
@@ -209,6 +207,11 @@ module.exports = function (grunt) {
 				tasks: ['sass:dev', 'cssmin:all', 'sync']
 		    },
 
+		    js: {
+				files: ['./<%= project.base %>/js/**/*.js', '!./<%= project.base %>/js/**/*.min.js'],
+				tasks: ['uglify:all']
+		    },
+
 			html: {
 				files: ['./*.html'],
 				tasks: ['sync', 'includes']
@@ -224,6 +227,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-includes');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -235,7 +239,7 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('build', [
-		'clean:build', 'sass:dev', 'cssmin:all', 'copy:all', 'includes'
+		'clean:build', 'uglify:all', 'sass:dev', 'cssmin:all', 'copy:all', 'includes'
     ]);
 
     grunt.registerTask('test', [

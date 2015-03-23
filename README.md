@@ -80,7 +80,7 @@ This project was build with a team of six young innovators from all over Europe.
 Browse the live [PointUp](http://roadtracking-pro.appspot.com) WebApp.
 
 ## Credits
-Thanks for the great support by the [Bosch mySPIN](http://www.bosch-softtec.com/myspin.html) Team. We want to thank all the sponsors and the host Plug&Play Accelerator who made the Hackathon available.
+Thanks for the great support by the [Bosch mySPIN](http://www.bosch-softtec.com/myspin.html) Team. We want to thank all the sponsors and the host Plug&Play Accelerator who made the Hackathon available. We had an awesome experience with all the Thanks for the great support by the [Bosch mySPIN](http://www.bosch-softtec.com/myspin.html) Team. We want to thank all the sponsors and the host Plug&Play Accelerator who made the Hackathon available. We had an awesome experience with all the Thanks for the great support by the [Bosch mySPIN](http://www.bosch-softtec.com/myspin.html) Team. We want to thank all the sponsors and the host Plug&Play Accelerator who made the Hackathon available. Thanks to all participants we had an awesome time with you.
 
 ## License
 Code released under the [MIT](https://github.com/mediahackday/roadtracking/blob/master/LICENSE) license.

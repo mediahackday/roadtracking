@@ -41,7 +41,7 @@ After the install process is over, you'll be able to build the application using
 $ grunt build
 ```
 
-### Troubleshooting
+## Troubleshooting
 During install some of you may encounter some issues, most of this issues can be solved by one of the following tips.
 
 #### Update NPM or Grunt

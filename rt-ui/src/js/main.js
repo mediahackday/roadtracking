@@ -14,7 +14,7 @@
         	localStorage.removeItem(key);
 		},
 
-		getName: function(personid) {
+		getUserData: function(personid) {
 			return $.ajax({
 				url: './auth',
 				type: 'get'
@@ -26,10 +26,10 @@
 	$(function() {
 		//do some stuff when the DOM is ready
 
-		$('#signup').submit(function(event) {
+		$('#test').submit(function(event) {
 			console.log($(this).serialize());
 
-			rt.getName('2342342').done(function(data) {
+			rt.getUserData('2342342').done(function(data) {
 				console.log(data);
 			});
 

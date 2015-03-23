@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = function (grunt) {
+	require('time-grunt')(grunt);
+
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -207,9 +209,9 @@ module.exports = function (grunt) {
 				tasks: ['sass:dev', 'cssmin:all', 'sync']
 		    },
 
-		    js: {
+		    script: {
 				files: ['./<%= project.base %>/js/**/*.js', '!./<%= project.base %>/js/**/*.min.js'],
-				tasks: ['uglify:all']
+				tasks: ['uglify:all', 'sync']
 		    },
 
 			html: {

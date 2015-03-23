@@ -1,7 +1,9 @@
-build/
 log/
+build/
+.DS_Store
+.textmate
 .gradle/
 .idea/
-.DS_Store
+*.log
 *.iml
 *.min*

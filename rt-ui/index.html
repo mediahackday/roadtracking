@@ -35,7 +35,7 @@
 	</head>
 	<body class="bg-grey">
 		<div class="container">
-			<form id="signup" role="form" action="./highscore.html">
+			<form role="form" action="auth?state=highscore.html">
 				<img src="./img/logo.png" class="margin-bottom-24 img-responsive">
 
 				<h3 class="margin-bottom-15 text-white">Become master of your daily route</h3>
@@ -44,13 +44,14 @@
 
 				<label for="inputAlias" class="sr-only">Your alias</label>
 				<input type="text" name="inputAlias" id="inputAlias" class="form-control" placeholder="Your alias" required autofocus>
+
 				<div class="checkbox">
 					<label class=" text-white">
 						<input type="checkbox" value="remember-me"> Remember me
 					</label>
 					
 				</div>
-				<button class="btn btn-lg btn-default btn-block" type="submit">Sign up with Google</button>
+				<input type="submit" class="btn btn-lg btn-default btn-block" value="Sign up with Google">
 			</form>
 		</div>
 

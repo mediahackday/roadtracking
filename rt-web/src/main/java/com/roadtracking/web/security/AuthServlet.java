@@ -31,6 +31,9 @@ public class AuthServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String code = req.getParameter("code");
         String state = nullToEmpty(req.getParameter("state"));
+        if (state.isEmpty()) {
+            state = "highscore.html";
+        }
         String loginHint = nullToEmpty(req.getParameter("loginHint"));
         PrintWriter pw = res.getWriter();
         if (code == null) {
@@ -47,6 +50,7 @@ public class AuthServlet extends HttpServlet {
             } else {
                 String email = securityManager.getUserEmail(oauthToken.getAuthHeader());
 				logger.info("email = {}", email);
+                logger.info("state = {}", state);
 				if (securityManager.isUserAllowed(email)) {
 					res.setContentType("text/html");
 					pw.write("<!DOCTYPE html>");

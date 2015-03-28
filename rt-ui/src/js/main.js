@@ -26,14 +26,11 @@
 	$(function() {
 		//do some stuff when the DOM is ready
 
-		$('#test').submit(function(event) {
-			console.log($(this).serialize());
-
-			rt.getUserData('2342342').done(function(data) {
-				console.log(data);
-			});
-
-			event.preventDefault();
-		});
+		var authUser = rt.getLocalStorageItem('auth-user');
+		console.log(authUser);
+		
+		if (typeof authUser !== "undefined") {
+			$('#signUpForm').html('You are logged in!');
+		}
 	});
 }(window.jQuery, window, document));

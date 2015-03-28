@@ -65,124 +65,124 @@ module.exports = function (grunt) {
 			}
 		},
 
-        sync: {
-            main: {
-                files: [
-                    {
+		sync: {
+			main: {
+				files: [
+					{
 						expand: true,
-                        cwd: '.',
-                        src: ['*.html'],
-                        dest: './<%= project.dist %>/',
-                        filter: 'isFile'
-                    },
+						cwd: '.',
+						src: ['*.html'],
+						dest: './<%= project.dist %>/',
+						filter: 'isFile'
+					},
 
-                    {
-                        expand: true,
-                        cwd: '<%= project.base %>/img',
-                        src: ['**/*', '!**/*.tiff'],
-                        dest: '<%= project.dist %>/img' 
-                    },
-
-                    {
-                        expand: true,
-                        cwd: '<%= project.base %>/css',
-                        src: ['**/*.css'],
-                        dest: '<%= project.dist %>/css' 
-                    },
-
-                    {
-                        expand: true,
-                        cwd: '<%= project.base %>/js',
-                        src: ['**/*.js'],
-                        dest: '<%= project.dist %>/js' 
-                    },
-
-                    {
-                        expand: false,
-                        cwd: '<%= project.jquery %>/dist',
-                        src: ['*'],
-                        dest: '<%= project.dist %>/lib/jquery',
-                        filter: 'isFile'
-                    },
-
-                    {
-                        expand: true,
-                        cwd: '<%= project.bootstrap %>/fonts/bootstrap', 
-                        src: ['*'],
-                        dest: '<%= project.dist %>/css/fonts' 
-                    },
-
-                    {
-                        expand: true,
-                        cwd: '<%= project.bootstrap %>/javascripts', 
-                        src: ['*'],
-                        dest: '<%= project.dist %>/lib/bootstrap',
-                        filter: 'isFile'
-                    }
-                ],
-
-                verbose: true,
-                updateAndDelete: true
-            }
-        },
-
-        copy: {
-            all: {
-                files: [
-                    {
+					{
 						expand: true,
-                        cwd: '.',
-                        src: ['*.html'],
-                        dest: './<%= project.dist %>/',
-                        filter: 'isFile'
-                    },
+						cwd: '<%= project.base %>/img',
+						src: ['**/*', '!**/*.tiff'],
+						dest: '<%= project.dist %>/img' 
+					},
 
-                    {
-                        expand: true,
-                        cwd: './<%= project.base %>/img',
-                        src: ['**/*', '!**/*.tiff'],
-                        dest: './<%= project.dist %>/img' 
-                    },
+					{
+						expand: true,
+						cwd: '<%= project.base %>/css',
+						src: ['**/*.css'],
+						dest: '<%= project.dist %>/css' 
+					},
 
-                    {
-                        expand: true,
-                        cwd: './<%= project.base %>/css',
-                        src: ['**/*.css'],
-                        dest: './<%= project.dist %>/css' 
-                    },
+					{
+						expand: true,
+						cwd: '<%= project.base %>/js',
+						src: ['**/*.js'],
+						dest: '<%= project.dist %>/js' 
+					},
 
-                    {
-                        expand: true,
-                        cwd: './<%= project.base %>/js',
-                        src: ['**/*.js'],
-                        dest: '<%= project.dist %>/js' 
-                    },
+					{
+						expand: false,
+						cwd: '<%= project.jquery %>/dist',
+						src: ['*'],
+						dest: '<%= project.dist %>/lib/jquery',
+						filter: 'isFile'
+					},
 
-                    {
-                        expand: true,
-                        cwd: './<%= project.jquery %>/dist',
-                        src: ['*'],
-                        dest: './<%= project.dist %>/lib/jquery',
-                        filter: 'isFile'
-                    },
+					{
+						expand: true,
+						cwd: '<%= project.bootstrap %>/fonts/bootstrap', 
+						src: ['*'],
+						dest: '<%= project.dist %>/css/fonts' 
+					},
 
-                    {
-                        expand: true,
-                        cwd: './<%= project.bootstrap %>/fonts/bootstrap', 
-                        src: ['*'],
-                        dest: './<%= project.dist %>/css/fonts' 
-                    },
+					{
+						expand: true,
+						cwd: '<%= project.bootstrap %>/javascripts', 
+						src: ['*'],
+						dest: '<%= project.dist %>/lib/bootstrap',
+						filter: 'isFile'
+					}
+				],
 
-                    {
-                        expand: true,
-                        cwd: './<%= project.bootstrap %>/javascripts', 
-                        src: ['*'],
-                        dest: './<%= project.dist %>/lib/bootstrap',
-                        filter: 'isFile'
-                    }
-                ]
-            }
-        },
+				verbose: true,
+				updateAndDelete: true
+			}
+		},
+
+		copy: {
+			all: {
+				files: [
+					{
+						expand: true,
+						cwd: '.',
+						src: ['*.html'],
+						dest: './<%= project.dist %>/',
+						filter: 'isFile'
+					},
+
+					{
+						expand: true,
+						cwd: './<%= project.base %>/img',
+						src: ['**/*', '!**/*.tiff'],
+						dest: './<%= project.dist %>/img' 
+					},
+
+					{
+						expand: true,
+						cwd: './<%= project.base %>/css',
+						src: ['**/*.css'],
+						dest: './<%= project.dist %>/css' 
+					},
+
+					{
+						expand: true,
+						cwd: './<%= project.base %>/js',
+						src: ['**/*.js'],
+						dest: '<%= project.dist %>/js' 
+					},
+
+					{
+						expand: true,
+						cwd: './<%= project.jquery %>/dist',
+						src: ['*'],
+						dest: './<%= project.dist %>/lib/jquery',
+						filter: 'isFile'
+					},
+
+					{
+						expand: true,
+						cwd: './<%= project.bootstrap %>/fonts/bootstrap', 
+						src: ['*'],
+						dest: './<%= project.dist %>/css/fonts' 
+					},
+
+					{
+						expand: true,
+						cwd: './<%= project.bootstrap %>/javascripts', 
+						src: ['*'],
+						dest: './<%= project.dist %>/lib/bootstrap',
+						filter: 'isFile'
+					}
+				]
+			}
+		},
 
 		includes: {
 			build: {
@@ -204,15 +204,15 @@ module.exports = function (grunt) {
 		},
 
 		watch: {
-		    sass: {
-                files: './<%= project.base %>/sass/**/*.scss',
+			sass: {
+				files: './<%= project.base %>/sass/**/*.scss',
 				tasks: ['sass:dev', 'cssmin:all', 'sync']
-		    },
+			},
 
-		    script: {
+			script: {
 				files: ['./<%= project.base %>/js/**/*.js', '!./<%= project.base %>/js/**/*.min.js'],
 				tasks: ['uglify:all', 'sync']
-		    },
+			},
 
 			html: {
 				files: ['./*.html'],

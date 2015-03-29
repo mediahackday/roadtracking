@@ -7,7 +7,7 @@
 		},
 
 		getLocalStorageItem: function(key) {
-			localStorage.getItem(key);
+			return localStorage.getItem(key);
 		},
 
 		removeLocalStorageItem: function(key) {
@@ -29,8 +29,8 @@
 		var authUser = rt.getLocalStorageItem('auth-user');
 		console.log(authUser);
 		
-		if (typeof authUser !== "undefined") {
-			$('#signUpForm').html('You are logged in!');
+		if (typeof authUser !== 'undefined' && !!authUser) {
+			$('#signUpForm').html('<p class="text-white">You are logged in!</p>');
 		}
 	});
 }(window.jQuery, window, document));

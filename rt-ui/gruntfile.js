@@ -1,8 +1,6 @@
 'use strict';
 
 module.exports = function (grunt) {
-	require('time-grunt')(grunt);
-
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -32,6 +30,14 @@ module.exports = function (grunt) {
 
 			options: {
 				colorizeOutput: true
+			}
+		},
+
+		jscs: {
+			src: ['<%= project.base %>/js/*.js', '!<%= project.base %>/js/*.min.js'],
+
+			options: {
+				requireCurlyBraces: ['if']
 			}
 		},
 
@@ -235,6 +241,7 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-browser-sync');
 	grunt.loadNpmTasks('grunt-scss-lint');
+	grunt.loadNpmTasks('grunt-jscs');
 
     grunt.registerTask('default', [
         'watch'
@@ -245,6 +252,6 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('test', [
-        'scsslint'
+        'scsslint', 'jscs'
     ]);
 };

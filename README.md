@@ -86,3 +86,6 @@ This project was build with a team of six young innovators from all over Europe.
 
 ## License
 Code released under the [MIT](https://github.com/mediahackday/roadtracking/blob/master/LICENSE) license.
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mediahackday/roadtracking/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
